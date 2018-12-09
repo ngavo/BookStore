@@ -22,6 +22,16 @@ public class Book {
 
     private String detail;
 
+    private String fielpdf;
+
+    public String getFielpdf() {
+        return fielpdf;
+    }
+
+    public void setFielpdf(String fielpdf) {
+        this.fielpdf = fielpdf;
+    }
+
     public String getId() {
         return id;
     }
