@@ -20,10 +20,16 @@ public class UserReponsitory {
     @Autowired
     private MongoTemplate mongoTemplate;
 
-    public String InserUser(User user){
+    public DataTokenAndIdUser InserUser(User user){
         User k = userDao.save(user);
 
-        return tokenReponsitory.createToken(k.getId());
+        DataTokenAndIdUser us = new DataTokenAndIdUser();
+         String t = tokenReponsitory.createToken(k.getId());
+
+         us.setToken(t);
+         us.setIdUser(k.getId());
+         us.setName(k.getName());
+         return us;
 
     }
 

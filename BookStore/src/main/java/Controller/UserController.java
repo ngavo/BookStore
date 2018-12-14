@@ -32,11 +32,11 @@ public class UserController {
 
 
     @RequestMapping(value="/register" ,method=RequestMethod.POST)
-    public ResponseEntity<String> InserUser(@ModelAttribute User user) throws IOException {
+    public ResponseEntity<DataTokenAndIdUser> InserUser(@RequestBody User user) throws IOException {
 
 
 
-        return new ResponseEntity<String>(userReponsitory.InserUser(user), HttpStatus.OK);
+        return new ResponseEntity<DataTokenAndIdUser>(userReponsitory.InserUser(user), HttpStatus.OK);
 
     }
 
